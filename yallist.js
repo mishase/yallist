@@ -32,6 +32,9 @@ Yallist.prototype.removeNode = function (node) {
     throw new Error('removing node which does not belong to this list')
   }
 
+  if (node.list.length === 0) return;
+  if (!node.list.next && !node.list.prev) return;
+
   var next = node.next
   var prev = node.prev
 
