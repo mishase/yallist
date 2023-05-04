@@ -33,7 +33,8 @@ Yallist.prototype.removeNode = function (node) {
   }
 
   if (node.list.length === 0) return;
-  if (!node.list.next && !node.list.prev) return;
+  if (node.list.length === 1) { if (node.list.head !== node) return; }
+  else if (!node.prev && !node.next) return;
 
   var next = node.next
   var prev = node.prev
